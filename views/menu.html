@@ -1,0 +1,119 @@
+<div class="container"  style="background-color:rgb(189, 27, 27)">
+    <div class="menuInsertar">
+
+
+        <br><br>
+       
+         <div id="update_modal" class="modal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">MODIFICAR REGISTRO</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="form-group has-success">
+                                <label class="form-control-label" for="inputSuccess1">NOMBRE DEL MOTIVO</label>
+                                <input type="number" value="{{item_motivo.motivo}}" class="form-control is-valid" id="edit_item_motivo" readonly="">
+        
+                                <label class="form-control-label" for="inputSuccess1">DESCRIPCION DEL MOTIVO</label>
+                                <input type="text" placeholder="{{item_motivo.des_motivo}}" class="form-control is-valid" id="edit_item_des_motivo">
+        
+                                <label class="form-control-label" for="inputSuccess1">ESTADO DEL MOTIVO</label>
+                                <input type="text" placeholder="{{item_motivo.estado}}" class="form-control is-valid" id="edit_item_estado">
+        
+                                <label class="form-control-label" for="inputSuccess1">TIPO DEL MOTIVO</label>
+                                <input type="text" placeholder="{{item_motivo.tipo}}" class="form-control is-valid" id="edit_item_tipo">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="botonRegistro" ng-click="Actualizar();" data-dismiss="modal">ACTUALIZAR</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">CERRAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+       
+        <label class="form-control-label" for="inputSuccess1">NUMERO MOTIVO</label>
+        <input type="number"  id="item_motivo">
+
+        <label class="form-control-label" for="inputSuccess1">DESCRIPCION MOTIVO</label>
+        <input type="text" id="item_des_motivo">
+
+        <label class="form-control-label" for="inputSuccess1">ESTADO MOTIVO</label>
+        <input type="text"  id="item_estado">
+
+        <label class="form-control-label" for="inputSuccess1">TIPO MOTIVO</label>
+        <input type="text"  id="item_tipo">
+
+
+        <br/>
+
+        <input type="hidden" ng-model="newEmployee.id" />
+
+        <button style="background-color:rgb(189, 27, 27)" type="button"class="botonRegistro" ng-click="agregar()">
+            <label style="color:white" style="font:bold">
+                CREAR REGISTRO
+   
+               </label>
+       
+        </button>
+        <div id="remove_modal" class="modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">ELIMINAR REGISTRO</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>¿DESEAS ELIMINAR REGISTRO?</p>                            
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" ng-click="deleteItem()" data-dismiss="modal">ELIMINAR</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+<p></p>
+        
+        <table style="background-color:rgb(189, 27, 27)" style="color:white"id="motivos" class="display table table-striped table-hover" >
+            <thead>
+                <tr>
+                    <th style="color:white"> NOMBRE DEL REGISTRO </th>
+                    <th style="color:white"> DES MOTIVO</th>
+                    <th style="color:white"> ESTADO </th>
+                    <th style="color:white"> TIPO</th>
+                    <th style="color:white"> ACCIONES </th>
+                </tr>                
+            </thead>
+          
+          
+            <tbody >
+                <tr ng-repeat="obj in tableResults" style="background-color:rgb(189, 27, 27)" >
+                    <td> {{obj.motivo}} </td>
+                    <td> {{obj.des_motivo}} </td>
+                    <td> {{obj.estado}} </td>
+                    <td> {{obj.tipo}} </td>
+                   
+                    <td> 
+                        <span style="cursor:pointer;" class="badge badge-pill badge-warning" ng-click="popup_actualizar(obj);">MODIFICAR</span>
+                        <span style="cursor:pointer;" class="badge badge-pill badge-danger" ng-click="quitar_pop(obj);" >BORRAR</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+      
+          
+
+             
+</div>

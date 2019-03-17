@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<script type="text/javascript" src="js/angular/angular.min.js"></script>
+  <script type="text/javascript" src="js/angular/angular-ui-router.min.js"></script>
+  <script src="js/angular/node_modules/jquery/dist/jquery.js"></script>
+  <script src="js/angular/node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/data.js"></script>
+  <script type="text/javascript" src="controllers/mainController.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+ 
+  <script>
+ 
+    var showdemo = angular.module('showdemo', [])
+     
+     
+     
+    .controller('ShowController', function($scope) {
+     
+     
+     
+      $scope.shdiv = false;
+     
+          $scope.CSSObj = {
+     
+            "color" : "#fff",
+     
+            "border-radius" : "15px",
+     
+            "margin" : "10px",
+     
+            "background-color" : "#FFB062",
+     
+            "font-size" : "20px",
+     
+            "padding" : "20px"
+     
+        }
+     
+     
+     
+    });
+     
+    </script>
+
+<html lang="es" ng-app="Detektor">
+<header>
+	  <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>APLICACION DETEKTOR</title>  
+  </header>
+
+<body>
+  
+   <div padding  >
+        <button style="background-color:rgb(189, 27, 27)" ion-button block  class="btn btn-lg btn-primary btn-block btn-signin" >
+          DETEKTOR APP
+        </button>
+      </div>
+      
+   <p>  </p>
+  <div ui-view></div>
+
+  
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="libs/bootstrap.min.css">
+
+</body>
+
+
+</html>
