@@ -1,14 +1,16 @@
 <?php
 ini_set('display_errors',1);
 require_once("base.php");
+header("Access-Control-Allow-Origin: *");
 
+//http://douglasdeodato.com/douglasdeodato/postgresql-peer-authentication-failed-for-user-postgres/
 
 class Motivos
 {
 	private $con;
 	public function __construct()
 	{
-		$this->con = new Database();
+		$this->con = new Base();
         $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     	$this->con->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     	if($_POST){
